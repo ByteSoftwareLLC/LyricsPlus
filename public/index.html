@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lyrics+</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loadingScreen">
+    <h1>Lyrics<span class="plus-gradient">+</span></h1>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+
+  <div id="app" class="hidden">
+    <header>
+      Lyrics<span class="plus-gradient">+</span>
+      <button id="hamburgerBtn" aria-label="Menu">&#9776;</button>
+      <nav id="hamburgerMenu" class="hidden">
+        <button id="accountBtn">Account Details</button>
+        <button id="logoutBtn">Log Out</button>
+      </nav>
+    </header>
+
+    <main>
+      <button id="togglePrompts" aria-pressed="false">View Pre-Made Prompts</button>
+
+      <div class="prompt-suggestions hidden" id="promptSuggestions">
+        <button onclick="setPrompt('Write me a rap about AI and the future')">🎤 Rap about AI</button>
+        <button onclick="setPrompt('Create a sad song about heartbreak')">💔 Sad song</button>
+        <button onclick="setPrompt('Write a happy pop chorus')">🎶 Happy chorus</button>
+        <button onclick="setPrompt('Generate lyrics for a rock ballad')">🎸 Rock ballad</button>
+        <button onclick="setPrompt('Create a freestyle verse about space')">🚀 Freestyle space</button>
+      </div>
+
+      <div class="chat-box" id="chatBox"></div>
+
+      <div class="input-container">
+        <input type="text" placeholder="Type your prompt..." id="userInput" autocomplete="off" />
+        <button id="sendBtn">Send</button>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
